@@ -1,0 +1,29 @@
+<section data-ng-controller="ProjectController" data-ng-init="findOne()"> 
+	<h1>Edit Project</h1> 
+	<form data-ng-submit="update()" novalidate> 
+		<div> 
+			<label for="title">Title</label> 
+			<div> 
+				<input type="text" data-ng-model="project.title" id="title" placeholder="Title" required> 
+			</div> 
+		</div> 
+		<div> 
+			<label for="purposeText">Purpose</label> 
+			<div> 
+				<textarea data-ng-model="project.purposeText" id="purposeText" cols="30" rows="10" placeholder="PurposeText"></textarea> 
+			</div> 
+		</div> 
+		<div> 
+			<label for="requirements">Requirements</label> 
+			<div> 
+				<textarea data-ng-model="project.requirements" id="requirements" cols="30" rows="10" placeholder="Requirements"></textarea> 
+			</div> 
+		</div> 
+		<div> 
+			<input type="submit" value="Update"> 
+		</div> 
+		<div data-ng-show="error"> 
+			<strong data-ng-bind="error"></strong> 
+		</div> 
+	</form> 
+</section>

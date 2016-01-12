@@ -1,0 +1,20 @@
+<section data-ng-controller="ProjectController" data-ng-init="findOne()"> 
+	<h1>Title</h1>
+	<h1 data-ng-bind="project.title"></h1>	 
+	<!--<small> 
+		<em>Posted on</em> 
+		<em data-ng-bind="article.created | date:'mediumDate'"></em> 
+		<em>by</em> 
+		<em data-ng-bind="article.creator.fullName"></em> 
+	</small> -->
+	<h2>Purpose</h2>
+	<p data-ng-bind="project.purposeText"></p> 
+	<h2>Requirements</h2>
+	<li data-ng-repeat="requirement in project.requirements"> 
+			<p data-ng-bind="requirement"></p> 
+	</li> 	
+	<div data-ng-show="authentication.user._id == project.creator._id"> 
+		<a href="/#!/project/edit/{{project._id}}/">edit</a> 
+		<a href="#" data-ng-click="delete();">delete</a> 
+	</div>
+</section>
